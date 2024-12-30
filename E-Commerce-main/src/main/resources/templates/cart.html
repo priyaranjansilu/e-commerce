@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/cartStyle.css}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo"><img th:src="@{/img/7835563.png}" alt="Logo"></div>
+            <h1>Shopping Cart</h1>
+            <nav>
+                <a href="/newpage">Home</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="cart-section">
+                <h2>Your Cart</h2>
+                <div id="cart-items">
+                    <p>Loading cart items...</p>
+                </div>
+                <div id="cart-summary">
+                    <h3>Summary</h3>
+                    <p>Total Items: <span id="total-items">0</span></p>
+                    <p>Total Price: $<span id="total-price">0.00</span></p>
+					<button id="checkout-button">Proceed to Checkout</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script th:src="@{/js/cart.js}"></script>
+</body>
+</html>

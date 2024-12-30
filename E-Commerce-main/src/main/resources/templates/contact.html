@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+	<link rel="stylesheet" th:href="@{/css/contact.css}">
+</head>
+<body>
+	<h1 style="	display: flex;
+	        justify-content: center; /* Centers horizontally */
+	        align-items: center;    /* Centers vertically */
+	        ">e-Commerce</h1>
+    <div class="container">
+        <div class="contact-left" style="margin-top: 90px;">
+            <h1>Contact Us</h1>
+            <p><a href="mailto:Subrat@gmail.com">Subrat@gmail.com</a></p>
+            <p><a href="tel:+918260732064">+91 8260732064</a></p>
+            
+           
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="Email" placeholder="Your E-mail" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+
+    <script th:src="@{/js/contact.js}"></script>
+</body>
+</html>

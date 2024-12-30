@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Shopping Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/welcome.css}">
+</head>
+<body>
+    <div class="welcome-container">
+        <h1 class="animation">Welcome to Shopping Website</h1>
+        <p>Choose your login role to proceed</p>
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='/login'">Login as User</button>
+            <button class="button" onclick="window.location.href='/admin'">Login as Admin</button>
+        </div>
+    </div>
+</body>
+</html>

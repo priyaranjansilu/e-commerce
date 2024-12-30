@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap">
+	<link rel="stylesheet" th:href="@{/css/paymentpage.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Page</h1>
+        <form id="payment-form">
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" name="paymentMethod" required>
+                <option value="card">Card Payment</option>
+                <option value="upi">UPI</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+
+            <!-- Card Payment Fields -->
+            <div id="card-fields" class="payment-method">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" name="cardName" placeholder="Enter your name">
+
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 9101 1121" maxlength="19">
+
+                <label for="expiry-date">Expiry Date</label>
+                <input type="month" id="expiry-date" name="expiryDate">
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3">
+            </div>
+
+            <!-- UPI Payment Fields -->
+            <div id="upi-fields" class="payment-method hidden">
+                <label for="upi-id">UPI ID</label>
+                <input type="text" id="upi-id" name="upiId" placeholder="example@upi">
+            </div>
+
+            <!-- Total Amount -->
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name="amount" readonly>
+
+            <button type="submit">Pay Now</button>
+        </form>
+        <p id="response-message" class="success-message"></p>
+    </div>
+
+    <script th:src="@{/js/paymentpage.js}"></script>
+</body>
+</html>

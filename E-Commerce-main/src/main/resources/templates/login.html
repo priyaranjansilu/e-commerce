@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yinka Enoch Adedokun">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <img th:src="@{/img/7835563.png}" alt="Company Logo" class="animated-image">
+            <h3 class="slide-in">Online Shopping</h3>
+        </div>
+        <div class="login-right fade-in">
+            <h2>Log In</h2>
+            <form id="loginForm" th:action="@{/api/login}" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember Me!</label>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p>Don't have an account? <a th:href="@{/register}">Register Here</a></p>
+            <p id="error-message" style="color: red; display: none;">Invalid username or password. Please try again.</p>
+        </div>
+    </div>
+	<script th:src="@{/js/login.js}"></script>
+</body>
+</html>
